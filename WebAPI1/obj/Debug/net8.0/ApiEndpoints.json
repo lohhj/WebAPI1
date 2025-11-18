@@ -1,0 +1,118 @@
+[
+  {
+    "ContainingType": "WebAPI1.Presentation.Controllers.FreelancerController",
+    "Method": "GetAll",
+    "RelativePath": "api/Freelancer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI1.Presentation.Controllers.FreelancerController",
+    "Method": "Create",
+    "RelativePath": "api/Freelancer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "WebAPI1.Application.Commands.CreateFreelancerCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI1.Presentation.Controllers.FreelancerController",
+    "Method": "GetById",
+    "RelativePath": "api/Freelancer/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI1.Presentation.Controllers.FreelancerController",
+    "Method": "Update",
+    "RelativePath": "api/Freelancer/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "WebAPI1.Application.Commands.UpdateFreelancerCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI1.Presentation.Controllers.FreelancerController",
+    "Method": "Delete",
+    "RelativePath": "api/Freelancer/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI1.Presentation.Controllers.FreelancerController",
+    "Method": "Archive",
+    "RelativePath": "api/Freelancer/{id}/archive",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "WebAPI1.Application.Commands.ArchiveFreelancerCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI1.Presentation.Controllers.FreelancerController",
+    "Method": "Search",
+    "RelativePath": "api/Freelancer/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
