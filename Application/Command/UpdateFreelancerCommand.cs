@@ -1,9 +1,10 @@
-﻿using MediatR;
+﻿using FluentResults;
+using MediatR;
 using System.Text.Json.Serialization;
 
 namespace WebAPI1.Application.Commands
 {
-    public class UpdateFreelancerCommand : IRequest<bool>
+    public class UpdateFreelancerCommand : IRequest<Result>
     {
         [JsonIgnore]
         public int Id { get; set; }

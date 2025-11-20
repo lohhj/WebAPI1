@@ -21,9 +21,8 @@ namespace WebAPI1.Presentation.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var query = new GetFreelancerByIdQuery { Id = id };
-            var result = await mediator.Send(query);
-            return result != null ? Ok(result) : NotFound();
+            var result = await mediator.Send(new GetFreelancerByIdQuery { Id = id });
+            return result.IsSuccess ? Ok(result.Value) : NotFound(result.Errors.Select(e => e.Message));
         }
 
         // GET /api/freelancer/search?keyword=...
@@ -39,8 +38,13 @@ namespace WebAPI1.Presentation.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateFreelancerCommand command)
         {
-            var id = await mediator.Send(command);
-            return CreatedAtAction(nameof(GetById), new { id = id }, new { id = id });
+            var result = await mediator.Send(command);
+            if (result.IsFailed)
+            {
+                return BadRequest(result.Errors.Select(e => e.Message));
+            }
+            var id = result.Value;
+            return CreatedAtAction(nameof(GetById), new { id }, new { id });
         }
 
         // PUT /api/freelancer/5
@@ -48,8 +52,8 @@ namespace WebAPI1.Presentation.Controllers
         public async Task<IActionResult> Update(int id, [FromBody] UpdateFreelancerCommand command)
         {
             command.Id = id;
-            var success = await mediator.Send(command);
-            return success ? NoContent() : NotFound();
+            var result = await mediator.Send(command);
+            return result.IsSuccess ? NoContent() : NotFound(result.Errors.Select(e => e.Message));
         }
 
         // DELETE /api/freelancer/5
@@ -57,8 +61,8 @@ namespace WebAPI1.Presentation.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var command = new DeleteFreelancerCommand { Id = id };
-            var success = await mediator.Send(command);
-            return success ? NoContent() : NotFound();
+            var result = await mediator.Send(command);
+            return result.IsSuccess ? NoContent() : NotFound(result.Errors.Select(e => e.Message));
         }
 
         // PATCH /api/freelancer/5/archive
@@ -66,8 +70,8 @@ namespace WebAPI1.Presentation.Controllers
         public async Task<IActionResult> Archive(int id, [FromBody] ArchiveFreelancerCommand command)
         {
             command.Id = id;
-            var success = await mediator.Send(command);
-            return success ? NoContent() : NotFound();
+            var result = await mediator.Send(command);
+            return result.IsSuccess ? NoContent() : NotFound(result.Errors.Select(e => e.Message));
         }
     }
 }

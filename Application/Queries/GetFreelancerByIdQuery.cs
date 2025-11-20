@@ -2,10 +2,9 @@
 using MediatR;
 using WebAPI1.Application.DTOs;
 
-namespace WebAPI1.Application.Queries
+namespace WebAPI1.Application.Queries;
+
+public class GetFreelancerByIdQuery : IRequest<Result<CreateFreelancerResponse>>
 {
-    public class GetFreelancerByIdQuery : IRequest<CreateFreelancerResponse>
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
 }

@@ -1,13 +1,21 @@
-﻿using MediatR;
+﻿using FluentResults;
+using MediatR;
 using WebAPI1.Domain.Interfaces;
 
 namespace WebAPI1.Application.Commands
 {
-    public class DeleteFreelancerCommandHandler(IFreelancerRepository repository) : IRequestHandler<DeleteFreelancerCommand, bool>
+    public class DeleteFreelancerCommandHandler(IFreelancerRepository repository) : IRequestHandler<DeleteFreelancerCommand, Result>
     {
-        public async Task<bool> Handle(DeleteFreelancerCommand request, CancellationToken cancellationToken)
+        public async Task<Result> Handle(DeleteFreelancerCommand request, CancellationToken cancellationToken)
         {
-            return await repository.DeleteAsync(request.Id);
+            var success = await repository.DeleteAsync(request.Id);
+
+            if (!success)
+            {
+                return Result.Fail($"Freelancer with ID {request.Id} not found");
+            }
+
+            return Result.Ok();
         }
     }
 }

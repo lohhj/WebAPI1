@@ -1,8 +1,8 @@
 ﻿using MediatR;
-
+using FluentResults;
 namespace WebAPI1.Application.Commands
 {
-    public class CreateFreelancerCommand : IRequest<int>
+    public class CreateFreelancerCommand : IRequest<Result<int>>
     {
         public string Username { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;

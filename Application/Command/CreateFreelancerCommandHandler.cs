@@ -1,13 +1,16 @@
 ﻿using Domain.Entities;
+using FluentResults;
 using MediatR;
 using WebAPI1.Domain.Entities;
 using WebAPI1.Domain.Interfaces;
 
-namespace WebAPI1.Application.Commands
+namespace WebAPI1.Application.Commands;
+
+public class CreateFreelancerCommandHandler(IFreelancerRepository repository) : IRequestHandler<CreateFreelancerCommand, Result<int>>
 {
-    public class CreateFreelancerCommandHandler(IFreelancerRepository repository) : IRequestHandler<CreateFreelancerCommand, int>
+    public async Task<Result<int>> Handle(CreateFreelancerCommand request, CancellationToken cancellationToken)
     {
-        public async Task<int> Handle(CreateFreelancerCommand request, CancellationToken cancellationToken)
+        try
         {
             var freelancer = new Freelancer
             {
@@ -19,7 +22,13 @@ namespace WebAPI1.Application.Commands
                 Hobbies = request.Hobbies.Select(hobby => new Hobbies { Hobby = hobby }).ToList()
             };
 
-            return await repository.CreateAsync(freelancer);
+            var id = await repository.CreateAsync(freelancer);
+
+            return Result.Ok(id);
+        }
+        catch (Exception ex)
+        {
+            return Result.Fail(new Error("Creation failed").CausedBy(ex));
         }
     }
 }
