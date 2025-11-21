@@ -37,7 +37,7 @@ namespace Application.UnitTests
             var result = await _handler.Handle(command, CancellationToken.None);
 
             // Assert
-            Assert.True(result);
+            Assert.True(result.IsSuccess);
             _mockRepository.Verify(
                 repo => repo.UpdateAsync(1, It.Is<Freelancer>(f =>
                     f.Id == 1 &&
@@ -65,7 +65,8 @@ namespace Application.UnitTests
             var result = await _handler.Handle(command, CancellationToken.None);
 
             // Assert
-            Assert.False(result);
+            Assert.True(result.IsFailed);
+            Assert.Contains("not found", result.Errors[0].Message);
         }
     }
 }

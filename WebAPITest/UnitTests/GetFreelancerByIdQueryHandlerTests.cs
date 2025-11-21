@@ -1,9 +1,11 @@
-﻿using Xunit;
+﻿using Domain.Entities;
+using FluentResults;
 using Moq;
-using WebAPI1.Domain.Interfaces;
-using Domain.Entities;
-using WebAPI1.Domain.Entities;
+using System.Web.Http.Results;
 using WebAPI1.Application.Queries;
+using WebAPI1.Domain.Entities;
+using WebAPI1.Domain.Interfaces;
+using Xunit;
 
 namespace Application.UnitTests
 {
@@ -19,7 +21,7 @@ namespace Application.UnitTests
         }
 
         [Fact]
-        public async Task Handle_ShouldReturnDto_WhenFreelancerExists()
+        public async Task Handle_ShouldReturnSuccess_WhenFreelancerExists()
         {
             // Arrange
             var fakeFreelancer = new Freelancer
@@ -37,16 +39,18 @@ namespace Application.UnitTests
 
             // Act
             var query = new GetFreelancerByIdQuery { Id = 1 };
-            var resultDto = await _handler.Handle(query, CancellationToken.None);
+            var result = await _handler.Handle(query, CancellationToken.None);
 
             // Assert
-            Assert.NotNull(resultDto);
-            Assert.Equal(1, resultDto.Id);
-            Assert.Equal("Test User", resultDto.Username);
-            Assert.Equal("test@gmail.com", resultDto.Email);
-            Assert.Single(resultDto.Skillsets);
-            Assert.Equal("C#", resultDto.Skillsets[0]);
-            Assert.Equal("Coding", resultDto.Hobbies[0]);
+            Assert.True(result.IsSuccess);
+            var dto = result.Value;
+            Assert.NotNull(dto);
+            Assert.Equal(1, dto.Id);
+            Assert.Equal("Test User", dto.Username);
+            Assert.Equal("test@gmail.com", dto.Email);
+            Assert.Single(dto.Skillsets);
+            Assert.Equal("C#", dto.Skillsets[0]);
+            Assert.Equal("Coding", dto.Hobbies[0]);
         }
 
         [Fact]
@@ -57,10 +61,11 @@ namespace Application.UnitTests
 
             // Act
             var query = new GetFreelancerByIdQuery { Id = 1 };
-            var resultDto = await _handler.Handle(query, CancellationToken.None);
+            var result = await _handler.Handle(query, CancellationToken.None);
 
             // Assert
-            Assert.Null(resultDto);
+            Assert.True(result.IsFailed);
+            Assert.Contains("not found", result.Errors[0].Message);
         }
     }
 }

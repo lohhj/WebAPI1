@@ -3,6 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|c:\\users\\haojuan\\source\\repos\\webapi1\\webapitest\\unittests\\createfreelancercommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|solutionrelative:webapitest\\unittests\\createfreelancercommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|c:\\users\\haojuan\\source\\repos\\webapi1\\webapitest\\unittests\\updatefreelancercommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|solutionrelative:webapitest\\unittests\\updatefreelancercommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|c:\\users\\haojuan\\source\\repos\\webapi1\\webapitest\\unittests\\archivefreelancercommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|solutionrelative:webapitest\\unittests\\archivefreelancercommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|c:\\users\\haojuan\\source\\repos\\webapi1\\webapitest\\unittests\\deletefreelancercommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|solutionrelative:webapitest\\unittests\\deletefreelancercommandhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|c:\\users\\haojuan\\source\\repos\\webapi1\\webapitest\\unittests\\getallfreelancersqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|solutionrelative:webapitest\\unittests\\getallfreelancersqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|c:\\users\\haojuan\\source\\repos\\webapi1\\webapitest\\unittests\\searchfreelancersqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|solutionrelative:webapitest\\unittests\\searchfreelancersqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|c:\\users\\haojuan\\source\\repos\\webapi1\\webapitest\\unittests\\getfreelancerbyidqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC647EF9-6600-C403-34B6-7072F18A9A0A}|WebAPITest\\WebAPITest.csproj|solutionrelative:webapitest\\unittests\\getfreelancerbyidqueryhandlertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2F06AD60-2A3F-4FD5-878F-B5DA03DBD33F}|WebAPI1\\WebAPI1.csproj|c:\\users\\haojuan\\source\\repos\\webapi1\\webapi1\\presentation\\controllers\\freelancercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F06AD60-2A3F-4FD5-878F-B5DA03DBD33F}|WebAPI1\\WebAPI1.csproj|solutionrelative:webapi1\\presentation\\controllers\\freelancercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -74,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,33 +110,110 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GetFreelancerByIdQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetFreelancerByIdQueryHandler.cs",
-              "RelativeDocumentMoniker": "Application\\Queries\\GetFreelancerByIdQueryHandler.cs",
-              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetFreelancerByIdQueryHandler.cs*",
-              "RelativeToolTip": "Application\\Queries\\GetFreelancerByIdQueryHandler.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABGAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ArchiveFreelancerCommandHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\ArchiveFreelancerCommandHandlerTests.cs",
+              "RelativeDocumentMoniker": "WebAPITest\\UnitTests\\ArchiveFreelancerCommandHandlerTests.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\ArchiveFreelancerCommandHandlerTests.cs",
+              "RelativeToolTip": "WebAPITest\\UnitTests\\ArchiveFreelancerCommandHandlerTests.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDEAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:21:48.118Z",
+              "WhenOpened": "2025-11-21T12:15:53.193Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GetFreelancerByIdQuery.cs",
-              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetFreelancerByIdQuery.cs",
-              "RelativeDocumentMoniker": "Application\\Queries\\GetFreelancerByIdQuery.cs",
-              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetFreelancerByIdQuery.cs*",
-              "RelativeToolTip": "Application\\Queries\\GetFreelancerByIdQuery.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "DeleteFreelancerCommandHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\DeleteFreelancerCommandHandlerTests.cs",
+              "RelativeDocumentMoniker": "WebAPITest\\UnitTests\\DeleteFreelancerCommandHandlerTests.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\DeleteFreelancerCommandHandlerTests.cs",
+              "RelativeToolTip": "WebAPITest\\UnitTests\\DeleteFreelancerCommandHandlerTests.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:16:47.354Z",
+              "WhenOpened": "2025-11-21T12:15:12.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UpdateFreelancerCommandHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\UpdateFreelancerCommandHandlerTests.cs",
+              "RelativeDocumentMoniker": "WebAPITest\\UnitTests\\UpdateFreelancerCommandHandlerTests.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\UpdateFreelancerCommandHandlerTests.cs",
+              "RelativeToolTip": "WebAPITest\\UnitTests\\UpdateFreelancerCommandHandlerTests.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAMwDkAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T11:47:28.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SearchFreelancersQueryHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\SearchFreelancersQueryHandlerTests.cs",
+              "RelativeDocumentMoniker": "WebAPITest\\UnitTests\\SearchFreelancersQueryHandlerTests.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\SearchFreelancersQueryHandlerTests.cs",
+              "RelativeToolTip": "WebAPITest\\UnitTests\\SearchFreelancersQueryHandlerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T11:46:38.011Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "GetAllFreelancersQueryHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\GetAllFreelancersQueryHandlerTests.cs",
+              "RelativeDocumentMoniker": "WebAPITest\\UnitTests\\GetAllFreelancersQueryHandlerTests.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\GetAllFreelancersQueryHandlerTests.cs",
+              "RelativeToolTip": "WebAPITest\\UnitTests\\GetAllFreelancersQueryHandlerTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T11:45:19.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetFreelancerByIdQueryHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\GetFreelancerByIdQueryHandlerTests.cs",
+              "RelativeDocumentMoniker": "WebAPITest\\UnitTests\\GetFreelancerByIdQueryHandlerTests.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\GetFreelancerByIdQueryHandlerTests.cs",
+              "RelativeToolTip": "WebAPITest\\UnitTests\\GetFreelancerByIdQueryHandlerTests.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA1wBoAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T10:02:30.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CreateFreelancerCommandHandlerTests.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\CreateFreelancerCommandHandlerTests.cs",
+              "RelativeDocumentMoniker": "WebAPITest\\UnitTests\\CreateFreelancerCommandHandlerTests.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPITest\\UnitTests\\CreateFreelancerCommandHandlerTests.cs*",
+              "RelativeToolTip": "WebAPITest\\UnitTests\\CreateFreelancerCommandHandlerTests.cs*",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAmwDMAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T10:01:09.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GetFreelancerByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetFreelancerByIdQuery.cs",
+              "RelativeDocumentMoniker": "Application\\Queries\\GetFreelancerByIdQuery.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetFreelancerByIdQuery.cs",
+              "RelativeToolTip": "Application\\Queries\\GetFreelancerByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:16:47.354Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "SearchFreelancersQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\SearchFreelancersQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Queries\\SearchFreelancersQueryHandler.cs",
@@ -116,12 +221,11 @@
               "RelativeToolTip": "Application\\Queries\\SearchFreelancersQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:16:13.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T13:16:13.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 12,
               "Title": "SearchFreelancersQuery.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\SearchFreelancersQuery.cs",
               "RelativeDocumentMoniker": "Application\\Queries\\SearchFreelancersQuery.cs",
@@ -129,25 +233,23 @@
               "RelativeToolTip": "Application\\Queries\\SearchFreelancersQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:16:01.374Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T13:16:01.374Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
               "Title": "GetAllFreelancersQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetAllFreelancersQueryHandler.cs",
               "RelativeDocumentMoniker": "Application\\Queries\\GetAllFreelancersQueryHandler.cs",
-              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetAllFreelancersQueryHandler.cs*",
-              "RelativeToolTip": "Application\\Queries\\GetAllFreelancersQueryHandler.cs*",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetAllFreelancersQueryHandler.cs",
+              "RelativeToolTip": "Application\\Queries\\GetAllFreelancersQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:14:58.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T13:14:58.51Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "GetAllFreelancersQuery.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetAllFreelancersQuery.cs",
               "RelativeDocumentMoniker": "Application\\Queries\\GetAllFreelancersQuery.cs",
@@ -155,25 +257,48 @@
               "RelativeToolTip": "Application\\Queries\\GetAllFreelancersQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:14:40.2Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T13:14:40.2Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "DeleteFreelancerCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\DeleteFreelancerCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Command\\DeleteFreelancerCommandHandler.cs",
-              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\DeleteFreelancerCommandHandler.cs*",
-              "RelativeToolTip": "Application\\Command\\DeleteFreelancerCommandHandler.cs*",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\DeleteFreelancerCommandHandler.cs",
+              "RelativeToolTip": "Application\\Command\\DeleteFreelancerCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:13:07.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T13:13:07.924Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "FreelancerController.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPI1\\Presentation\\Controllers\\FreelancerController.cs",
+              "RelativeDocumentMoniker": "WebAPI1\\Presentation\\Controllers\\FreelancerController.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPI1\\Presentation\\Controllers\\FreelancerController.cs",
+              "RelativeToolTip": "WebAPI1\\Presentation\\Controllers\\FreelancerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T09:45:22.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetFreelancerByIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetFreelancerByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "Application\\Queries\\GetFreelancerByIdQueryHandler.cs",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Queries\\GetFreelancerByIdQueryHandler.cs",
+              "RelativeToolTip": "Application\\Queries\\GetFreelancerByIdQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T13:21:48.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "UpdateFreelancerCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\UpdateFreelancerCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Command\\UpdateFreelancerCommandHandler.cs",
@@ -181,12 +306,11 @@
               "RelativeToolTip": "Application\\Command\\UpdateFreelancerCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:11:22.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T13:11:22.917Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "ArchiveFreelancerCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\ArchiveFreelancerCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Command\\ArchiveFreelancerCommandHandler.cs",
@@ -194,51 +318,35 @@
               "RelativeToolTip": "Application\\Command\\ArchiveFreelancerCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T12:59:54.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T12:59:54.087Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FreelancerController.cs",
-              "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPI1\\Presentation\\Controllers\\FreelancerController.cs",
-              "RelativeDocumentMoniker": "WebAPI1\\Presentation\\Controllers\\FreelancerController.cs",
-              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPI1\\Presentation\\Controllers\\FreelancerController.cs",
-              "RelativeToolTip": "WebAPI1\\Presentation\\Controllers\\FreelancerController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEkAAABjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:45:22.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "DeleteFreelancerCommand.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\DeleteFreelancerCommand.cs",
               "RelativeDocumentMoniker": "Application\\Command\\DeleteFreelancerCommand.cs",
-              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\DeleteFreelancerCommand.cs*",
-              "RelativeToolTip": "Application\\Command\\DeleteFreelancerCommand.cs*",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\DeleteFreelancerCommand.cs",
+              "RelativeToolTip": "Application\\Command\\DeleteFreelancerCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:12:53.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T13:12:53.876Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "UpdateFreelancerCommand.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\UpdateFreelancerCommand.cs",
               "RelativeDocumentMoniker": "Application\\Command\\UpdateFreelancerCommand.cs",
-              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\UpdateFreelancerCommand.cs*",
-              "RelativeToolTip": "Application\\Command\\UpdateFreelancerCommand.cs*",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\UpdateFreelancerCommand.cs",
+              "RelativeToolTip": "Application\\Command\\UpdateFreelancerCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T13:11:05.668Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T13:11:05.668Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "ArchiveFreelancerCommand.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\ArchiveFreelancerCommand.cs",
               "RelativeDocumentMoniker": "Application\\Command\\ArchiveFreelancerCommand.cs",
@@ -246,12 +354,11 @@
               "RelativeToolTip": "Application\\Command\\ArchiveFreelancerCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T12:59:28.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T12:59:28.297Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "CreateFreelancerCommand.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\CreateFreelancerCommand.cs",
               "RelativeDocumentMoniker": "Application\\Command\\CreateFreelancerCommand.cs",
@@ -259,25 +366,23 @@
               "RelativeToolTip": "Application\\Command\\CreateFreelancerCommand.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:43:11.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T09:43:11.555Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "CreateFreelancerCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\CreateFreelancerCommandHandler.cs",
               "RelativeDocumentMoniker": "Application\\Command\\CreateFreelancerCommandHandler.cs",
-              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\CreateFreelancerCommandHandler.cs*",
-              "RelativeToolTip": "Application\\Command\\CreateFreelancerCommandHandler.cs*",
+              "ToolTip": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\Application\\Command\\CreateFreelancerCommandHandler.cs",
+              "RelativeToolTip": "Application\\Command\\CreateFreelancerCommandHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T09:43:07.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T09:43:07.873Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\haojuan\\source\\repos\\WebAPI1\\WebAPI1\\Program.cs",
               "RelativeDocumentMoniker": "WebAPI1\\Program.cs",
@@ -285,8 +390,7 @@
               "RelativeToolTip": "WebAPI1\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T05:30:43.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T05:30:43.01Z"
             }
           ]
         }

@@ -27,7 +27,7 @@ namespace Application.UnitTests
             var result = await _handler.Handle(command, CancellationToken.None);
 
             // Assert
-            Assert.True(result);
+            Assert.True(result.IsSuccess);
             _mockRepository.Verify(repo => repo.ArchiveAsync(1, true), Times.Once);
         }
 
@@ -42,7 +42,7 @@ namespace Application.UnitTests
             var result = await _handler.Handle(command, CancellationToken.None);
 
             // Assert
-            Assert.True(result);
+            Assert.True(result.IsSuccess);
             _mockRepository.Verify(repo => repo.ArchiveAsync(1, false), Times.Once);
         }
 
@@ -57,7 +57,7 @@ namespace Application.UnitTests
             var result = await _handler.Handle(command, CancellationToken.None);
 
             // Assert
-            Assert.False(result);
+            Assert.True(result.IsFailed);
         }
     }
 }

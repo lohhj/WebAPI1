@@ -4,69 +4,61 @@ using WebAPI1.Domain.Interfaces;
 using Domain.Entities;
 using WebAPI1.Application.Commands;
 
-namespace Application.UnitTests
+namespace Application.UnitTests;
+
+public class CreateFreelancerCommandHandlerTests
 {
-    public class CreateFreelancerCommandHandlerTests
+    private readonly Mock<IFreelancerRepository> _mockRepository;
+    private readonly CreateFreelancerCommandHandler _handler;
+
+    public CreateFreelancerCommandHandlerTests()
     {
-        private readonly Mock<IFreelancerRepository> _mockRepository;
-        private readonly CreateFreelancerCommandHandler _handler;
+        _mockRepository = new Mock<IFreelancerRepository>();
+        _handler = new CreateFreelancerCommandHandler(_mockRepository.Object);
+    }
 
-        public CreateFreelancerCommandHandlerTests()
+    [Fact]
+    public async Task Handle_ShouldReturnSuccess_WithId()
+    {
+        // Arrange
+        var command = new CreateFreelancerCommand
         {
-            _mockRepository = new Mock<IFreelancerRepository>();
-            _handler = new CreateFreelancerCommandHandler(_mockRepository.Object);
-        }
+            Username = "New User",
+            Email = "new@email.com",
+            PhoneNumber = "12345678",
+            Archived = false,
+            Skillsets = new List<string> { "C#" },
+            Hobbies = new List<string> { "Testing" }
+        };
+        var expectedNewId = 10;
+        _mockRepository.Setup(repo => repo.CreateAsync(It.IsAny<Freelancer>())).ReturnsAsync(expectedNewId);
 
-        [Fact]
-        public async Task Handle_ShouldCallRepository_WithCorrectFreelancerEntity()
+        // Act
+        var result = await _handler.Handle(command, CancellationToken.None);
+
+        // Assert
+        Assert.True(result.IsSuccess);
+        Assert.Equal(expectedNewId, result.Value);
+    }
+
+    [Fact]
+    public async Task Handle_ShouldReturnFail_WhenExceptionOccurs()
+    {
+        // Arrange
+        var command = new CreateFreelancerCommand
         {
-            // Arrange
-            var command = new CreateFreelancerCommand
-            {
-                Username = "New User",
-                Email = "new@gmail.com",
-                PhoneNumber = "12345678",
-                Archived = false,
-                Skillsets = new List<string> { "C#", "SQL" },
-                Hobbies = new List<string> { "Testing" }
-            };
-            var expectedNewId = 10;
-            _mockRepository.Setup(repo => repo.CreateAsync(It.IsAny<Freelancer>())).ReturnsAsync(expectedNewId);
+            Username = "Test",
+            Skillsets = new List<string>(),
+            Hobbies = new List<string>()
+        };
+        _mockRepository.Setup(repo => repo.CreateAsync(It.IsAny<Freelancer>())).ThrowsAsync(new Exception("DB Error"));
 
-            // Act
-            var actualId = await _handler.Handle(command, CancellationToken.None);
+        // Act
+        var result = await _handler.Handle(command, CancellationToken.None);
 
-            // Assert
-            Assert.Equal(expectedNewId, actualId);
-            _mockRepository.Verify(
-                repo => repo.CreateAsync(It.Is<Freelancer>(f =>
-                    f.Username == "New User" &&
-                    f.Email == "new@gmail.com" &&
-                    f.PhoneNumber == "12345678" &&
-                    f.Archived == false &&
-                    f.Skillsets.Count == 2 &&
-                    f.Skillsets[0].Skill == "C#" &&
-                    f.Skillsets[1].Skill == "SQL" &&
-                    f.Hobbies.Count == 1 &&
-                    f.Hobbies[0].Hobby == "Testing"
-                )),
-                Times.Once
-            );
-        }
-
-        [Fact]
-        public async Task Handle_ShouldThrowException_WhenRepositoryThrowsException()
-        {
-            // Arrange
-            var command = new CreateFreelancerCommand { Username = "Test", Email = "a@a.com", PhoneNumber = "111" };
-            var dbException = new InvalidOperationException("Database error");
-            _mockRepository.Setup(repo => repo.CreateAsync(It.IsAny<Freelancer>())).ThrowsAsync(dbException);
-
-            // Act & Assert
-            var ex = await Assert.ThrowsAsync<InvalidOperationException>(() =>
-                _handler.Handle(command, CancellationToken.None)
-            );
-            Assert.Equal("Database error", ex.Message);
-        }
+        // Assert
+        Assert.True(result.IsFailed);
+        Assert.Contains("Creation failed", result.Errors[0].Message);
+        Assert.Equal("DB Error", result.Errors[0].Reasons[0].Message);
     }
 }

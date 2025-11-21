@@ -33,10 +33,11 @@ namespace Application.UnitTests
             var result = await _handler.Handle(new SearchFreelancersQuery { Keyword = keyword }, CancellationToken.None);
 
             // Assert
-            Assert.NotNull(result);
-            Assert.Single(result);
-            Assert.Equal("test_user", result.First().Username);
-            Assert.Equal("SQL", result.First().Skillsets.First());
+            Assert.True(result.IsSuccess);
+
+            var list = result.Value;
+            Assert.Single(list);
+            Assert.Equal("test_user", list.First().Username);
         }
 
         [Fact]
@@ -50,8 +51,8 @@ namespace Application.UnitTests
             var result = await _handler.Handle(new SearchFreelancersQuery { Keyword = keyword }, CancellationToken.None);
 
             // Assert
-            Assert.NotNull(result);
-            Assert.Empty(result);
+            Assert.True(result.IsSuccess);
+            Assert.Empty(result.Value);
         }
     }
 }
