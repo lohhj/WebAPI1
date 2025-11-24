@@ -1,18 +1,11 @@
-﻿using FluentResults;
-using MediatR;
+﻿using MediatR;
+using FluentResults;
 using System.Text.Json.Serialization;
 
-namespace WebAPI1.Application.Commands
+namespace WebAPI1.Application.Commands;
+
+public class UpdateFreelancerCommand : FreelancerCommandBase, IRequest<Result>
 {
-    public class UpdateFreelancerCommand : IRequest<Result>
-    {
-        [JsonIgnore]
-        public int Id { get; set; }
-        public string Username { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string PhoneNumber { get; set; } = string.Empty;
-        public bool Archived { get; set; }
-        public List<string> Skillsets { get; set; } = new();
-        public List<string> Hobbies { get; set; } = new();
-    }
+    [JsonIgnore]
+    public int Id { get; set; }
 }

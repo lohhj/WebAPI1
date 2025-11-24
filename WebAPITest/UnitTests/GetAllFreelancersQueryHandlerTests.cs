@@ -2,57 +2,79 @@
 using Moq;
 using WebAPI1.Domain.Interfaces;
 using Domain.Entities;
-using WebAPI1.Domain.Entities;
 using WebAPI1.Application.Queries;
 
-namespace Application.UnitTests
+namespace Application.UnitTests;
+
+public class GetAllFreelancersQueryHandlerTests
 {
-    public class GetAllFreelancersQueryHandlerTests
+    private readonly Mock<IFreelancerRepository> _mockRepository;
+    private readonly GetAllFreelancersQueryHandler _handler;
+
+    public GetAllFreelancersQueryHandlerTests()
     {
-        private readonly Mock<IFreelancerRepository> _mockRepository;
-        private readonly GetAllFreelancersQueryHandler _handler;
+        _mockRepository = new Mock<IFreelancerRepository>();
+        _handler = new GetAllFreelancersQueryHandler(_mockRepository.Object);
+    }
 
-        public GetAllFreelancersQueryHandlerTests()
+    [Fact]
+    public async Task Handle_ShouldCallGetAll_WhenKeywordIsHasValue()
+    {
+        // Arrange
+        var freelancers = new List<Freelancer>
         {
-            _mockRepository = new Mock<IFreelancerRepository>();
-            _handler = new GetAllFreelancersQueryHandler(_mockRepository.Object);
-        }
+            new Freelancer { Id = 1, Username = "User1", Email="user1@gmail.com", PhoneNumber="11111111", Archived=false, Skillsets = new(), Hobbies = new() }
+        };
 
-        [Fact]
-        public async Task Handle_ShouldReturnMappedDtos_WhenFreelancersExist()
+        _mockRepository.Setup(r => r.GetAllAsync()).ReturnsAsync(freelancers);
+
+        // Act
+        var query = new GetAllFreelancersQuery { Keyword = null };
+        var result = await _handler.Handle(query, CancellationToken.None);
+
+        // Assert
+        Assert.True(result.IsSuccess);
+        Assert.Equal(1, result.Value.Count());
+
+        _mockRepository.Verify(r => r.GetAllAsync(), Times.Once);
+        _mockRepository.Verify(r => r.SearchAsync(It.IsAny<string>()), Times.Never);
+    }
+
+    [Fact]
+    public async Task Handle_ShouldCallSearch_WhenKeywordIsProvided()
+    {
+        // Arrange
+        var keyword = "User1";
+        var freelancers = new List<Freelancer>
         {
-            // Arrange
-            var freelancers = new List<Freelancer>
-            {
-                new Freelancer { Id = 1, Username = "User1", Email = "user1@gmail.com", PhoneNumber = "11111111", Archived = false, Skillsets = new List<Skillset> { new Skillset { Skill = "C#" } }, Hobbies = new List<Hobbies>() },
-                new Freelancer { Id = 2, Username = "User2", Email = "user2@gmail.com", PhoneNumber = "22222222", Archived = false, Skillsets = new List<Skillset>(), Hobbies = new List<Hobbies> { new Hobbies { Hobby = "Art" } } }
-            };
-            _mockRepository.Setup(r => r.GetAllAsync()).ReturnsAsync(freelancers);
+            new Freelancer { Id = 1, Username = "User1", Email="user1@gmail.com", PhoneNumber="1111111", Archived=false, Skillsets = new(), Hobbies = new() }
+        };
 
-            // Act
-            var result = await _handler.Handle(new GetAllFreelancersQuery(), CancellationToken.None);
+        _mockRepository.Setup(r => r.SearchAsync(keyword)).ReturnsAsync(freelancers);
 
-            // Assert
-            Assert.True(result.IsSuccess);
+        // Act
+        var query = new GetAllFreelancersQuery { Keyword = keyword };
+        var result = await _handler.Handle(query, CancellationToken.None);
 
-            var list = result.Value;
-            Assert.NotNull(list);
-            Assert.Equal(2, list.Count());
-            Assert.Equal("User1", list.First().Username);
-        }
+        // Assert
+        Assert.True(result.IsSuccess);
+        Assert.Equal(1, result.Value.Count());
 
-        [Fact]
-        public async Task Handle_ShouldReturnEmptyList_WhenNoFreelancersExist()
-        {
-            // Arrange
-            _mockRepository.Setup(r => r.GetAllAsync()).ReturnsAsync(new List<Freelancer>());
+        _mockRepository.Verify(r => r.SearchAsync(keyword), Times.Once);
+        _mockRepository.Verify(r => r.GetAllAsync(), Times.Never);
+    }
 
-            // Act
-            var result = await _handler.Handle(new GetAllFreelancersQuery(), CancellationToken.None);
+    [Fact]
+    public async Task Handle_ShouldReturnEmptyList_WhenNoDataFound()
+    {
+        // Arrange
+        _mockRepository.Setup(r => r.GetAllAsync()).ReturnsAsync(new List<Freelancer>());
 
-            // Assert
-            Assert.True(result.IsSuccess);
-            Assert.Empty(result.Value);
-        }
+        // Act
+        var result = await _handler.Handle(new GetAllFreelancersQuery(), CancellationToken.None);
+
+        // Assert
+        Assert.True(result.IsSuccess);
+        Assert.Empty(result.Value);
     }
 }

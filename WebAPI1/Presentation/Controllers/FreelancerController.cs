@@ -10,11 +10,18 @@ namespace WebAPI1.Presentation.Controllers
     public class FreelancerController(IMediator mediator) : ControllerBase
     {
         // GET /api/freelancer
+        // GET /api/freelancer/search?keyword=...
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] GetAllFreelancersQuery query)
         {
-            var result = await mediator.Send(new GetAllFreelancersQuery());
-            return Ok(result);
+            var result = await mediator.Send(query);
+
+            if (result.IsFailed)
+            {
+                return BadRequest(result.Errors.Select(e => e.Message));
+            }
+
+            return Ok(result.Value);
         }
 
         // GET /api/freelancer/5
@@ -24,16 +31,7 @@ namespace WebAPI1.Presentation.Controllers
             var result = await mediator.Send(new GetFreelancerByIdQuery { Id = id });
             return result.IsSuccess ? Ok(result.Value) : NotFound(result.Errors.Select(e => e.Message));
         }
-
-        // GET /api/freelancer/search?keyword=...
-        [HttpGet("search")]
-        public async Task<IActionResult> Search([FromQuery] string keyword)
-        {
-            var query = new SearchFreelancersQuery { Keyword = keyword };
-            var result = await mediator.Send(query);
-            return Ok(result);
-        }
-
+        
         // POST /api/freelancer
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateFreelancerCommand command)
