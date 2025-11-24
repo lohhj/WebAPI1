@@ -16,7 +16,6 @@ public class UpdateFreelancerCommandHandler(IFreelancerRepository repository) : 
             Username = request.Username,
             Email = request.Email,
             PhoneNumber = request.PhoneNumber,
-            Archived = request.Archived,
             Skillsets = request.Skillsets.Select(skill => new Skillset { Skill = skill }).ToList(),
             Hobbies = request.Hobbies.Select(hobby => new Hobbies { Hobby = hobby }).ToList()
         };

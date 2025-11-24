@@ -6,8 +6,7 @@ using WebAPI1.Domain.Interfaces;
 
 namespace WebAPI1.Application.Queries;
 
-public class GetAllFreelancersQueryHandler(IFreelancerRepository repository)
-    : IRequestHandler<GetAllFreelancersQuery, Result<IEnumerable<CreateFreelancerResponse>>>
+public class GetAllFreelancersQueryHandler(IFreelancerRepository repository) : IRequestHandler<GetAllFreelancersQuery, Result<IEnumerable<CreateFreelancerResponse>>>
 {
     public async Task<Result<IEnumerable<CreateFreelancerResponse>>> Handle(GetAllFreelancersQuery request, CancellationToken cancellationToken)
     {

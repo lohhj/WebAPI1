@@ -7,7 +7,5 @@ public class UpdateFreelancerCommandValidator : FreelancerCommandBaseValidator<U
 {
     public UpdateFreelancerCommandValidator()
     {
-        RuleFor(x => x.Id)
-            .GreaterThan(0).WithMessage("Invalid ID.");
     }
 }

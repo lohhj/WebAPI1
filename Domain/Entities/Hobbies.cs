@@ -6,10 +6,10 @@ namespace WebAPI1.Domain.Entities;
 public class Hobbies
 {
     [Column("id")]
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 
     [Column("freelancer_id")]
-    public int FreelancerId { get; set; }
+    public Guid FreelancerId { get; set; }
 
     [Column("hobby_name")]
     public string Hobby { get; set; } = string.Empty;

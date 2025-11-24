@@ -66,8 +66,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -87,8 +87,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -127,8 +127,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -150,8 +150,8 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string",
+              "format": "uuid"
             }
           }
         ],
@@ -208,9 +208,6 @@
             "type": "string",
             "nullable": true
           },
-          "archived": {
-            "type": "boolean"
-          },
           "skillsets": {
             "type": "array",
             "items": {
@@ -242,9 +239,6 @@
           "phoneNumber": {
             "type": "string",
             "nullable": true
-          },
-          "archived": {
-            "type": "boolean"
           },
           "skillsets": {
             "type": "array",

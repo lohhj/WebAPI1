@@ -23,7 +23,7 @@ public class GetAllFreelancersQueryHandlerTests
         // Arrange
         var freelancers = new List<Freelancer>
         {
-            new Freelancer { Id = 1, Username = "User1", Email="user1@gmail.com", PhoneNumber="11111111", Archived=false, Skillsets = new(), Hobbies = new() }
+            new Freelancer { Id = Guid.NewGuid(), Username = "User1", Email="user1@gmail.com", PhoneNumber="11111111", Archived=false, Skillsets = new(), Hobbies = new() }
         };
 
         _mockRepository.Setup(r => r.GetAllAsync()).ReturnsAsync(freelancers);
@@ -47,7 +47,7 @@ public class GetAllFreelancersQueryHandlerTests
         var keyword = "User1";
         var freelancers = new List<Freelancer>
         {
-            new Freelancer { Id = 1, Username = "User1", Email="user1@gmail.com", PhoneNumber="1111111", Archived=false, Skillsets = new(), Hobbies = new() }
+            new Freelancer { Id = Guid.NewGuid(), Username = "User1", Email="user1@gmail.com", PhoneNumber="11111111", Archived=false, Skillsets = new(), Hobbies = new() }
         };
 
         _mockRepository.Setup(r => r.SearchAsync(keyword)).ReturnsAsync(freelancers);

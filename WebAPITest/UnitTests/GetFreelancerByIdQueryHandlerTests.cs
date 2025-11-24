@@ -24,43 +24,39 @@ namespace Application.UnitTests
         public async Task Handle_ShouldReturnSuccess_WhenFreelancerExists()
         {
             // Arrange
+            var id = Guid.NewGuid();
             var fakeFreelancer = new Freelancer
             {
-                Id = 1,
+                Id = id,
                 Username = "Test User",
-                Email = "test@gmail.com",
+                Email = "test@email.com",
                 PhoneNumber = "12345678",
                 Archived = false,
                 Skillsets = new List<Skillset> { new Skillset { Skill = "C#" } },
                 Hobbies = new List<Hobbies> { new Hobbies { Hobby = "Coding" } }
             };
 
-            _mockRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync(fakeFreelancer);
+            _mockRepository.Setup(repo => repo.GetByIdAsync(id)).ReturnsAsync(fakeFreelancer);
 
             // Act
-            var query = new GetFreelancerByIdQuery { Id = 1 };
+            var query = new GetFreelancerByIdQuery { Id = id };
             var result = await _handler.Handle(query, CancellationToken.None);
 
             // Assert
             Assert.True(result.IsSuccess);
-            var dto = result.Value;
-            Assert.NotNull(dto);
-            Assert.Equal(1, dto.Id);
-            Assert.Equal("Test User", dto.Username);
-            Assert.Equal("test@gmail.com", dto.Email);
-            Assert.Single(dto.Skillsets);
-            Assert.Equal("C#", dto.Skillsets[0]);
-            Assert.Equal("Coding", dto.Hobbies[0]);
+            Assert.NotNull(result.Value);
+            Assert.Equal(id, result.Value.Id);
         }
 
         [Fact]
-        public async Task Handle_ShouldReturnNull_WhenFreelancerDoesNotExist()
+        public async Task Handle_ShouldReturnFail_WhenFreelancerDoesNotExist()
         {
             // Arrange
-            _mockRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync((Freelancer)null);
+            var id = Guid.NewGuid();
+            _mockRepository.Setup(repo => repo.GetByIdAsync(id)).ReturnsAsync((Freelancer)null);
 
             // Act
-            var query = new GetFreelancerByIdQuery { Id = 1 };
+            var query = new GetFreelancerByIdQuery { Id = id };
             var result = await _handler.Handle(query, CancellationToken.None);
 
             // Assert

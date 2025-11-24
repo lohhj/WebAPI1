@@ -39,7 +39,7 @@ namespace WebAPI1.Infrastructure.Data
             return freelancers.Values;
         }
 
-        public async Task<Freelancer?> GetByIdAsync(int id)
+        public async Task<Freelancer?> GetByIdAsync(Guid id)
         {
             using var connection = CreateConnection();
             var freelancer = await connection.QueryFirstOrDefaultAsync<Freelancer>(
@@ -60,7 +60,7 @@ namespace WebAPI1.Infrastructure.Data
             return freelancer;
         }
 
-        public async Task<int> CreateAsync(Freelancer freelancer)
+        public async Task<Guid> CreateAsync(Freelancer freelancer)
         {
             using var connection = CreateConnection();
             await connection.OpenAsync();
@@ -69,7 +69,7 @@ namespace WebAPI1.Infrastructure.Data
 
             try
             {
-                var id = await connection.ExecuteScalarAsync<int>(@"
+                var id = await connection.ExecuteScalarAsync<Guid>(@"
                     INSERT INTO freelancers (username,email,phone_number,archived)
                     VALUES (@Username,@Email,@PhoneNumber,@Archived) RETURNING id",
                     freelancer,
@@ -103,14 +103,14 @@ namespace WebAPI1.Infrastructure.Data
             }
         }
 
-        public async Task<bool> UpdateAsync(int id, Freelancer freelancer)
+        public async Task<bool> UpdateAsync(Guid id, Freelancer freelancer)
         {
             using var connection = CreateConnection();
             freelancer.Id = id;
 
             var rows = await connection.ExecuteAsync(
                 @"UPDATE freelancers
-                  SET username=@Username, email=@Email, phone_number=@PhoneNumber, archived=@Archived
+                  SET username=@Username, email=@Email, phone_number=@PhoneNumber
                   WHERE id=@Id", freelancer);
 
             await connection.ExecuteAsync("DELETE FROM skillsets WHERE freelancer_id=@Id", new { Id = id });
@@ -130,7 +130,7 @@ namespace WebAPI1.Infrastructure.Data
             return rows > 0;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(Guid id)
         {
             using var connection = CreateConnection();
             await connection.ExecuteAsync("DELETE FROM skillsets WHERE freelancer_id=@Id", new { Id = id });
@@ -161,7 +161,7 @@ namespace WebAPI1.Infrastructure.Data
             return freelancers;
         }
 
-        public async Task<bool> ArchiveAsync(int id, bool archive)
+        public async Task<bool> ArchiveAsync(Guid id, bool archive)
         {
             using var connection = CreateConnection();
             var rows = await connection.ExecuteAsync(

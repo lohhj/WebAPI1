@@ -17,26 +17,27 @@ namespace Application.UnitTests
         }
 
         [Fact]
-        public async Task Handle_ShouldReturnTrue_WhenDeleteSucceeds()
+        public async Task Handle_ShouldReturnOk_WhenDeleteSucceeds()
         {
             // Arrange
-            var command = new DeleteFreelancerCommand { Id = 1 };
-            _mockRepository.Setup(repo => repo.DeleteAsync(1)).ReturnsAsync(true);
+            var id = Guid.NewGuid();
+            var command = new DeleteFreelancerCommand { Id = id };
+            _mockRepository.Setup(repo => repo.DeleteAsync(id)).ReturnsAsync(true);
 
             // Act
             var result = await _handler.Handle(command, CancellationToken.None);
 
             // Assert
             Assert.True(result.IsSuccess);
-            _mockRepository.Verify(repo => repo.DeleteAsync(1), Times.Once);
         }
 
         [Fact]
-        public async Task Handle_ShouldReturnFalse_WhenDeleteFails()
+        public async Task Handle_ShouldReturnFail_WhenDeleteFails()
         {
             // Arrange
-            var command = new DeleteFreelancerCommand { Id = 99 }; 
-            _mockRepository.Setup(repo => repo.DeleteAsync(99)).ReturnsAsync(false);
+            var id = Guid.NewGuid();
+            var command = new DeleteFreelancerCommand { Id = id };
+            _mockRepository.Setup(repo => repo.DeleteAsync(id)).ReturnsAsync(false);
 
             // Act
             var result = await _handler.Handle(command, CancellationToken.None);

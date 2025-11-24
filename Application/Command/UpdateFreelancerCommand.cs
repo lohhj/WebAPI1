@@ -7,5 +7,5 @@ namespace WebAPI1.Application.Commands;
 public class UpdateFreelancerCommand : FreelancerCommandBase, IRequest<Result>
 {
     [JsonIgnore]
-    public int Id { get; set; }
+    public Guid Id { get; set; }
 }

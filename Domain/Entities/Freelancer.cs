@@ -7,7 +7,7 @@ namespace Domain.Entities
     public class Freelancer
     {
         [Column("id")]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Column("username")]
         public required string Username { get; set; }

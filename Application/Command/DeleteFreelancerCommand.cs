@@ -5,6 +5,6 @@ namespace WebAPI1.Application.Commands
 {
     public class DeleteFreelancerCommand : IRequest<Result>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

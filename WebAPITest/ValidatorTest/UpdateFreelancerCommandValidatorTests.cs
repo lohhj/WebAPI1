@@ -6,23 +6,8 @@ using Xunit;
 
 namespace Application.UnitTests.Validators;
 
-public class UpdateFreelancerCommandValidatorTests
-    : FreelancerCommandBaseValidatorTests<UpdateFreelancerCommand>
+public class UpdateFreelancerCommandValidatorTests : FreelancerCommandBaseValidatorTests<UpdateFreelancerCommand>
 {
-    protected override AbstractValidator<UpdateFreelancerCommand> Validator =>
-        new UpdateFreelancerCommandValidator();
+    protected override AbstractValidator<UpdateFreelancerCommand> Validator => new UpdateFreelancerCommandValidator();
 
-    [Fact]
-    public void ShouldHaveError_WhenIdIsInvalid()
-    {
-        // Arrange
-        var command = new UpdateFreelancerCommand { Id = 0 };
-
-        // Act
-        var result = Validator.TestValidate(command);
-
-        // Assert
-        result.ShouldHaveValidationErrorFor(x => x.Id)
-              .WithErrorMessage("Invalid ID.");
-    }
 }

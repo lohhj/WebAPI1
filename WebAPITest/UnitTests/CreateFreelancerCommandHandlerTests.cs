@@ -26,11 +26,10 @@ public class CreateFreelancerCommandHandlerTests
             Username = "New User",
             Email = "new@email.com",
             PhoneNumber = "12345678",
-            Archived = false,
             Skillsets = new List<string> { "C#" },
             Hobbies = new List<string> { "Testing" }
         };
-        var expectedNewId = 10;
+        var expectedNewId = Guid.NewGuid();
         _mockRepository.Setup(repo => repo.CreateAsync(It.IsAny<Freelancer>())).ReturnsAsync(expectedNewId);
 
         // Act

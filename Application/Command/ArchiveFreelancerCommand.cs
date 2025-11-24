@@ -7,7 +7,7 @@ namespace WebAPI1.Application.Commands
     public class ArchiveFreelancerCommand : IRequest<Result>
     {
         [JsonIgnore]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public bool Archived { get; set; }
     }

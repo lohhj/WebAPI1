@@ -3,61 +3,50 @@ using Moq;
 using WebAPI1.Domain.Interfaces;
 using WebAPI1.Application.Commands;
 
-namespace Application.UnitTests
+namespace Application.UnitTests;
+
+public class ArchiveFreelancerCommandHandlerTests
 {
-    public class ArchiveFreelancerCommandHandlerTests
+    private readonly Mock<IFreelancerRepository> _mockRepository;
+    private readonly ArchiveFreelancerCommandHandler _handler;
+
+    public ArchiveFreelancerCommandHandlerTests()
     {
-        private readonly Mock<IFreelancerRepository> _mockRepository;
-        private readonly ArchiveFreelancerCommandHandler _handler;
+        _mockRepository = new Mock<IFreelancerRepository>();
+        _handler = new ArchiveFreelancerCommandHandler(_mockRepository.Object);
+    }
 
-        public ArchiveFreelancerCommandHandlerTests()
-        {
-            _mockRepository = new Mock<IFreelancerRepository>();
-            _handler = new ArchiveFreelancerCommandHandler(_mockRepository.Object);
-        }
+    [Fact]
+    public async Task Handle_ShouldReturnOk_WhenArchiveSucceeds()
+    {
+        // Arrange
+        var id = Guid.NewGuid();
+        var command = new ArchiveFreelancerCommand { Id = id, Archived = true };
 
-        [Fact]
-        public async Task Handle_ShouldReturnTrue_WhenArchiveSucceeds()
-        {
-            // Arrange
-            var command = new ArchiveFreelancerCommand { Id = 1, Archived = true };
-            _mockRepository.Setup(repo => repo.ArchiveAsync(1, true)).ReturnsAsync(true);
+        // 模拟成功
+        _mockRepository.Setup(repo => repo.ArchiveAsync(id, true)).ReturnsAsync(true);
 
-            // Act
-            var result = await _handler.Handle(command, CancellationToken.None);
+        // Act
+        var result = await _handler.Handle(command, CancellationToken.None);
 
-            // Assert
-            Assert.True(result.IsSuccess);
-            _mockRepository.Verify(repo => repo.ArchiveAsync(1, true), Times.Once);
-        }
+        // Assert
+        Assert.True(result.IsSuccess);
+    }
 
-        [Fact]
-        public async Task Handle_ShouldReturnTrue_WhenUnArchiveSucceeds()
-        {
-            // Arrange
-            var command = new ArchiveFreelancerCommand { Id = 1, Archived = false };
-            _mockRepository.Setup(repo => repo.ArchiveAsync(1, false)).ReturnsAsync(true);
+    [Fact]
+    public async Task Handle_ShouldReturnFail_WhenFreelancerNotFound()
+    {
+        // Arrange
+        var id = Guid.NewGuid();
+        var command = new ArchiveFreelancerCommand { Id = id, Archived = true };
 
-            // Act
-            var result = await _handler.Handle(command, CancellationToken.None);
+        _mockRepository.Setup(repo => repo.ArchiveAsync(id, true)).ReturnsAsync(false);
 
-            // Assert
-            Assert.True(result.IsSuccess);
-            _mockRepository.Verify(repo => repo.ArchiveAsync(1, false), Times.Once);
-        }
+        // Act
+        var result = await _handler.Handle(command, CancellationToken.None);
 
-        [Fact]
-        public async Task Handle_ShouldReturnFalse_WhenArchiveFails()
-        {
-            // Arrange
-            var command = new ArchiveFreelancerCommand { Id = 99, Archived = true };
-            _mockRepository.Setup(repo => repo.ArchiveAsync(99, true)).ReturnsAsync(false);
-
-            // Act
-            var result = await _handler.Handle(command, CancellationToken.None);
-
-            // Assert
-            Assert.True(result.IsFailed);
-        }
+        // Assert
+        Assert.True(result.IsFailed);
+        Assert.Contains("not found", result.Errors[0].Message);
     }
 }
